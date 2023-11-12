@@ -24,8 +24,8 @@ export class UserAuthController {
   async registerUser(
     @Body() body: CreateUserDto,
   ): Promise<CreateUserResponseDto> {
-    await this.userAuthService.registerUser(body);
-    return { message: 'User registered successfully' };
+    const token = await this.userAuthService.registerUser(body);
+    return { message: 'User registered successfully', token };
   }
 
   @Post('login')

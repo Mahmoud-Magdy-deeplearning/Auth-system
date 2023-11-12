@@ -21,9 +21,7 @@ export class UserAuthService {
     private jwtService: JwtService,
   ) {}
 
-  async registerUser(
-    createUser: CreateUserDto,
-  ): Promise<CreateUserResponseDto> {
+  async registerUser(createUser: CreateUserDto): Promise<string> {
     const { username, email, password } = createUser;
     const user = await this.userModel.findOne({ email });
     if (user) {
@@ -33,7 +31,8 @@ export class UserAuthService {
     }
     const hash = await bcrypt.hash(password, 10);
     await this.userModel.create({ username, password: hash, email });
-    return { message: 'User registered successfully' };
+    const token = this.jwtService.sign({ username });
+    return token;
   }
 
   async loginUser(email: string, password: string): Promise<string> {
@@ -51,7 +50,11 @@ export class UserAuthService {
   }
 
   async getUsers(): Promise<User[]> {
-    const users = await this.userModel.find({}).select('-password').exec();
+    const users = await this.userModel
+      .find({})
+      .select('-password -_id -__v -createdAt -updatedAt')
+      .exec();
+
     return users;
   }
 }
