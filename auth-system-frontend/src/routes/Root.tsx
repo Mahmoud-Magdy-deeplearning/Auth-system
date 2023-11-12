@@ -26,7 +26,7 @@ const Root = () => {
     );
   return (
     <div className="text-center w-75 m-auto flex justify-center items-center flex-col min-h-screen w-full">
-      <h1 className="text-white text-center mt-0 text-5xl">
+      <h1 className="dark:text-white text-center mt-0 text-5xl">
         Welcome to the home page
       </h1>
 
