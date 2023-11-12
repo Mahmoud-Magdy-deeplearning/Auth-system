@@ -25,6 +25,10 @@ This project is a full-stack application that implements a robust authentication
 - **JWT (JSON Web Tokens):** Utilize JWT for secure and stateless authentication.
 - **Authorization:** Create protected routes that can only be accessed by authenticated users.
 - **MongoDB Integration:** Store user data securely in a MongoDB database.
+- **Protected API:**
+  - Implement a protected API that requires authentication using JWT tokens.
+  - Only authenticated users with valid JWT tokens can access this API.
+  - Ensure proper authorization checks for each endpoint to secure your application.
 
 ## Technologies Used
 - <span style="color:blue">**Backend:**</span>
