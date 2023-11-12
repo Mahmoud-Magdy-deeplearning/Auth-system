@@ -2,6 +2,10 @@
 
 
 
+https://github.com/Mahmoud-Magdy-deeplearning/Auth-system/assets/59231851/196e6b25-49d4-41ab-a41a-54cd4bb57396
+
+
+
 ## Overview
 
 This project is a full-stack application that implements a robust authentication and authorization system. It utilizes Nest.js and MongoDB on the backend for server-side logic, authentication, and authorization. On the frontend, React, Redux, and Tailwind CSS are employed to create a dynamic and responsive user interface.
